@@ -9,6 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedRecord = null;
     let sortState = { column: null, ascending: true };
 
+    function openDetailsModal(record) {
+        Object.keys(record).forEach(key => {
+
+            const el = document.getElementById("detail-" + key);
+
+            if (el) {
+                el.textContent = record[key] ?? "";
+            }
+
+        });
+
+        new bootstrap.Modal(
+            document.getElementById("detailsModal")
+        ).show();
+    }
+
     // ===== STILL INCARCERATED CHANGE HANDLER =====
     const stillSelect = document.getElementById("stillIncarcerated");
     const incarcerationWrapper = document.getElementById("incarcerationDateWrapper");
@@ -97,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (filters.name) query = query.ilike("name", `%${filters.name}%`);
     if (filters.institution) query = query.ilike("institution", `%${filters.institution}%`);
     if (filters.date) query = query.ilike("letterDate", `${filters.date}%`);
+    if (filters.idNumber) query = query.ilike("identificationNo", `%${filters.idNumber}%`);
     if (filters.stillIncarcerated === "yes") query = query.not("stillIncarcerated", "is", null);
     if (filters.stillIncarcerated === "no") query = query.is("stillIncarcerated", null);
     if (filters.stillIncarcerated === "searchbydate" && filters.incarceratedDate)
@@ -136,6 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("searchName").value = record.name ?? "";
         document.getElementById("searchInstitution").value = record.institution ?? "";
         document.getElementById("searchDate").value = record.letterDate ?? "";
+        });
+
+        tr.addEventListener("dblclick", () => {
+            const id = tr.dataset.id;
+
+            const record = catalogData.find(r => r.id == id);
+
+            if (!record) return;
+
+            openDetailsModal(record);
         });
     });
     }
@@ -217,7 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
         date: document.getElementById("searchDate").value,
         stillIncarcerated: document.getElementById("searchIncarcerated").value,
         incarceratedDate: document.getElementById("searchIncarceratedDate").value,
-        responseSent: document.getElementById("searchResponseSent").value
+        responseSent: document.getElementById("searchResponseSent").value,
+        idNumber: document.getElementById("searchID").value
     });
     });
     document.getElementById("resetSearchForm").addEventListener("click", () => {
