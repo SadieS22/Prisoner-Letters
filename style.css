@@ -1,0 +1,103 @@
+﻿/* Gradient action button */
+.btn-gradient {
+  background: linear-gradient(45deg, #0d6efd, #6610f2);
+  color: white;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #0b5ed7, #520dc2);
+  transform: translateY(-1px);
+}
+
+/* Dropdown hover styling */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f5ff;
+  font-weight: 500;
+}
+
+/* Gradient style for Search button */
+.btn-search {
+  background: linear-gradient(45deg, #198754, #20c997); /* green-teal */
+  color: white;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-search:hover {
+  background: linear-gradient(45deg, #157347, #1aa179);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Softer glassy look for Reset button */
+.btn-reset {
+  background: rgba(255, 255, 255, 0.6);
+  color: #333;
+  border: 1px solid #ccc;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-reset:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(-1px);
+  border-color: #999;
+}
+
+.keyword-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  background: #e9ecef;
+  font-size: 0.85rem;
+  user-select: none;
+}
+.keyword-badge button {
+  border: 0;
+  background: transparent;
+  padding-left: 4px;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination-wrapper {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding: 0.75rem 0;
+    border-top: 1px solid #ddd;
+    z-index: 10;
+}
+
+.pagination-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.pagination-center {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-input {
+    width: 70px;
+}
+
+#instructionsModal h6 {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+#instructionsModal ul {
+    padding-left: 1.2rem;
+}
