@@ -134,46 +134,56 @@
                 </div>
 
                 <!-- SECOND ROW: Summary on left, right side stacked info -->
-                <div class="col-md-6">
-                <label>Summary of Ask</label>
-                <textarea id="summaryAsk" class="form-control form-control-sm" rows="6" required></textarea>
-                </div>
+                <!-- SECOND ROW: Summary | Address | Right-side fields -->
+<div class="col-md-4">
+<label>Summary of Ask</label>
+<textarea id="summaryAsk" class="form-control form-control-sm" rows="5" required></textarea>
+</div>
 
-                <div class="col-md-6">
-                <!-- Top right: Response Sent + Responder Name/Date -->
-                <div class="row g-2 mb-2">
-                    <div class="col-md-6">
-                    <label>Response Sent?</label>
-                    <select id="responseSent" class="form-select form-select-sm" required>
-                        <option value="">Select...</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                        <option>Returned to Sender</option>
-                        <option>Not Sure</option>
-                    </select>
-                    </div>
-                    <div class="col-md-6">
-                    <label>Responder Name / Date</label>
-                    <input id="responderNameDate" class="form-control form-control-sm">
-                    </div>
-                </div>
+<div class="col-md-4">
+<label>Address</label>
+<textarea id="address" class="form-control form-control-sm" rows="5"></textarea>
+</div>
 
-                <!-- Bottom right: Inputter Name/Date + Scanned & Sent to Nicole -->
-                <div class="row g-2">
-                    <div class="col-md-6">
-                    <label>Name of Inputter / Date</label>
-                    <input id="inputterNameDate" class="form-control form-control-sm" required>
-                    </div>
-                    <div class="col-md-6">
-                    <label>Scanned & Sent to Nicole?</label>
-                    <select id="scannedSentNicole" class="form-select form-select-sm">
-                        <option value="">Select...</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                    </div>
-                </div>
-            </div>
+<div class="col-md-4">
+
+<!-- Top right: Response Sent + Responder Name/Date -->
+<div class="row g-2 mb-2">
+    <div class="col-6">
+    <label>Response Sent?</label>
+    <select id="responseSent" class="form-select form-select-sm" required>
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Returned to Sender</option>
+        <option>Not Sure</option>
+    </select>
+    </div>
+
+    <div class="col-6">
+    <label>Responder Name / Date</label>
+    <input id="responderNameDate" class="form-control form-control-sm">
+    </div>
+</div>
+
+<!-- Bottom right -->
+<div class="row g-2">
+    <div class="col-6">
+    <label>Name of Inputter / Date</label>
+    <input id="inputterNameDate" class="form-control form-control-sm" required>
+    </div>
+
+    <div class="col-6">
+    <label>Scanned & Sent to Nicole?</label>
+    <select id="scannedSentNicole" class="form-select form-select-sm">
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    </div>
+</div>
+
+</div>
 
         </form>
 
@@ -220,7 +230,7 @@
           <dt class="col-sm-4">ID No.</dt>
           <dd class="col-sm-8" id="detail-identificationNo"></dd>
 
-          <dt class="col-sm-4">Still Incarcerated</dt>
+          <dt class="col-sm-4">Still Incarcerated As Of</dt>
           <dd class="col-sm-8" id="detail-stillIncarcerated"></dd>
 
           <dt class="col-sm-4">Summary of Ask</dt>
@@ -237,6 +247,9 @@
 
           <dt class="col-sm-4">Scanned & Sent to Nicole</dt>
           <dd class="col-sm-8" id="detail-scannedSentNicole"></dd>
+
+          <dt class="col-sm-4">Address</dt>
+          <dd class="col-sm-8" id="detail-address"></dd>
 
         </dl>
 

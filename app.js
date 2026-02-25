@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("responderNameDate").value = record.responderNameDate ?? "";
         document.getElementById("inputterNameDate").value = record.inputterNameDate ?? "";
         document.getElementById("scannedSentNicole").value = record.scannedSentNicole ?? "";
+        document.getElementById("address").value = record.address ?? "";
     }
 
     // ===== SEARCH STILL INCARCERATED =====
@@ -231,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("inputterNameDate").value = selectedRecord.inputterNameDate ?? "";
         document.getElementById("responderNameDate").value = selectedRecord.responderNameDate ?? "";
         document.getElementById("scannedSentNicole").value = selectedRecord.scannedSentNicole ?? "";
+        document.getElementById("address").value = selectedRecord.address ?? "";
     });
     });
     }
@@ -270,7 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
             responseSent: document.getElementById("responseSent").value,
             inputterNameDate: document.getElementById("inputterNameDate").value,
             responderNameDate: document.getElementById("responderNameDate").value,
-            scannedSentNicole: document.getElementById("scannedSentNicole").value
+            scannedSentNicole: document.getElementById("scannedSentNicole").value,
+            address: document.getElementById("address").value            
         };
     }
 
